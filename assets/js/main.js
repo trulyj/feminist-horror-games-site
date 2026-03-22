@@ -60,8 +60,8 @@ function smoothScrollTo(y, time) {
 const numSteps = 20.0;
 
 let prevRatio = 0.0;
-let increasingColor = "rgb(130 130 130 / ratio)";
-let decreasingColor = "rgb(130 130 130 / ratio)";
+let increasingColor = "rgb(70 70 70 / ratio)";
+let decreasingColor = "rgb(70 70 70 / ratio)";
 
 function handleIntersect(entries, observer) {
   entries.forEach((entry) => {
