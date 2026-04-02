@@ -1,3 +1,9 @@
+/**
+ * Stylesheet specifically for the network chart.
+ * From the file Network Chart -> styles.css provided by Michael
+ * A number of modifications are made to display this properly on the site.
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 .chart-border {
