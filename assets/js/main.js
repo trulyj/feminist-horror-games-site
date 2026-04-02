@@ -1,3 +1,7 @@
+/**
+ * General JS file that contains various functions used by the site.
+ */
+
 // Fix DOM matches function
 if (!Element.prototype.matches) {
   Element.prototype.matches =
@@ -60,23 +64,10 @@ function smoothScrollTo(y, time) {
 const numSteps = 20.0;
 
 let prevRatio = 0.0;
-let increasingColor = "rgb(70 70 70 / ratio)";
-let decreasingColor = "rgb(70 70 70 / ratio)";
 
 function handleIntersect(entries, observer) {
   entries.forEach((entry) => {
-    if (entry.intersectionRatio > prevRatio) {
-      entry.target.style.backgroundColor = increasingColor.replace(
-        "ratio",
-        entry.intersectionRatio,
-      );
-    } else {
-      entry.target.style.backgroundColor = decreasingColor.replace(
-        "ratio",
-        entry.intersectionRatio,
-      );
-    }
-
+    entry.target.style.opacity = entry.intersectionRatio;
     prevRatio = entry.intersectionRatio;
   });
 }
@@ -97,7 +88,7 @@ function createObservers() {
 function createObserver() {
   const options = {
     root: null,
-    rootMargin: "-100px",
+    rootMargin: "30px",
     threshold: buildThresholdList(),
   };
 
@@ -108,7 +99,7 @@ function buildThresholdList() {
   const numSteps = 20;
 
   for (let i = 1.0; i <= numSteps; i++) {
-    const ratio = i / numSteps;
+    const ratio = i * 0.05;
     thresholds.push(ratio);
   }
 

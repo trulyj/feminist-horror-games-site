@@ -1,3 +1,10 @@
+/**
+ * JS file specifically for the barchart.
+ * From the file Horizontal Bar Chart -> chart.js provided by Michael
+ * This code probably doesn't need to be touched at all 
+ * unless we're changing the logic of the chart.
+ */
+
 new Chart(document.getElementById("myChart"), {
   type: "bar",
   data: {
