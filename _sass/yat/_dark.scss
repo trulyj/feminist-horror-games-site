@@ -1,8 +1,8 @@
 /**
- * Dark mode theming (which our site uses as its main theming due to "spooky"
+ * Dark mode theming (which our site uses mainly)
  */
 
-$dark-background-color:       #0e0e0e !default;
+$dark-background-color:       #080c0f !default;
 $dark-text-color: #bbb !default;
 
 html {
@@ -52,7 +52,7 @@ html {
   }
 
   .site-header {
-    background-color: #090909;
+    background-color: #080c0f;
 
     .site-brand {
       .site-brand-inner {
@@ -82,14 +82,14 @@ html {
       }
 
       .site-nav input:checked ~ .trigger {
-        background-color: #090909;
+        background-color: #080c0f;
       }
     }
   }
 
   .site-footer {
     color: #fff;
-    background-color: #000;
+    background-color: #000000;
   }
 
   .left-vsplit:before {

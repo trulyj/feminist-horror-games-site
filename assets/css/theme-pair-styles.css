@@ -1,0 +1,159 @@
+/**
+ * Stylesheet for co-occurrence theme pair pages.
+ */
+
+.tp-page {
+  color: #f0ebe3;
+  font-family: 'Sintony', sans-serif;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.tp-header {
+  background: #0e1215;
+  border-bottom: 1px solid rgba(107, 45, 110, 0.4);
+  padding: 40px 48px 36px;
+}
+
+.tp-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header nav ── */
+.tp-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 48px 64px;
+  border-top: 1px solid rgba(240, 235, 227, 0.1);
+}
+
+.tp-nav-link {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 227, 0.5);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.12s;
+}
+
+.tp-nav-link:hover {
+  color: #d966c8;
+  text-decoration: none;
+}
+
+.tp-nav-next {
+  margin-left: auto;
+}
+
+.tp-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d966c8;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.tp-title {
+  font-size: clamp(22px, 3.5vw, 38px);
+  font-weight: 700;
+  color: #f0ebe3;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.tp-count {
+  font-size: 13px;
+  color: rgba(240, 235, 227, 0.55);
+  margin: 0;
+}
+
+/* ── Body: main + sidebar ── */
+.tp-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 48px 80px;
+}
+
+.tp-main {
+  flex: 1;
+  min-width: 0;
+  padding-right: 48px;
+  border-right: 1px solid rgba(240, 235, 227, 0.1);
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(240, 235, 227, 0.85);
+}
+
+.tp-main p {
+  margin-bottom: 1.4em;
+}
+
+.tp-main h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f0ebe3;
+  margin: 2em 0 0.6em;
+  letter-spacing: 0.02em;
+}
+
+.tp-main h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #d966c8;
+  margin: 1.6em 0 0.4em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Sidebar ── */
+.tp-sidebar {
+  flex: 0 0 240px;
+  padding-left: 36px;
+  position: sticky;
+  top: 24px;
+  align-self: flex-start;
+}
+
+.tp-sidebar .section-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 227, 0.45);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.tp-game-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tp-game-list li {
+  border-bottom: 1px solid rgba(240, 235, 227, 0.07);
+}
+
+.tp-game-list li a {
+  display: block;
+  padding: 7px 0;
+  font-size: 13px;
+  color: rgba(240, 235, 227, 0.7);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.12s;
+}
+
+.tp-game-list li a:hover {
+  color: #d966c8;
+  text-decoration: none;
+}

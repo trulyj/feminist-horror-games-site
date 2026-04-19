@@ -1,8 +1,177 @@
 ---
 layout: post
-title:  "Data Table 4"
+title:  "Heat Map"
 date:   2026-03-01 21:57:46 -0500
-#this is just a placeholder, to be replaced with the HTML file for chart 4
+hide_from_home: true
 ---
 
-The fourth data table is here!
+<link rel="stylesheet" href="/assets/css/heatmap-styles.css">
+
+<div class="hm-wrapper">
+  <div class="hm-title">Theme Co-Occurrences Across Horror Video Games</div>
+  <div class="hm-body">
+
+    <div class="hm-chart-area">
+      <!-- Single CSS grid: n data rows + 1 column-label row, all in the same grid for alignment -->
+      <div class="hm-grid" id="hm-grid"></div>
+    </div>
+
+    <div class="hm-legend">
+      <div class="hm-legend-label">Number<br>of Games</div>
+      <div class="hm-legend-bar-wrap">
+        <canvas class="hm-legend-canvas" id="hm-legend-canvas" width="14" height="200"></canvas>
+        <div class="hm-legend-ticks" id="hm-legend-ticks"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  var themes = [
+    'Motherhood', 'Domesticity', 'Trauma & Mental Illness',
+    'Embodiment', 'Captivity', 'Violence', 'Sexualized Violence',
+    'Girlhood Horror', 'Woman as Monster', 'Queer Themes'
+  ];
+
+  // Co-occurrence matrix
+  var matrix = [
+    [ 0, 17, 27, 30, 27, 33,  6, 21,  8,  5],  // Motherhood
+    [17,  0, 14, 12, 12, 13,  5,  7,  1,  3],  // Domesticity
+    [27, 14,  0, 28, 24, 30,  8, 22,  7,  7],  // Trauma & Mental Illness
+    [30, 12, 28,  0, 27, 40,  8, 24, 12,  6],  // Embodiment
+    [27, 12, 24, 27,  0, 35,  6, 27,  9,  6],  // Captivity
+    [33, 13, 30, 40, 35,  0,  9, 30, 16,  4],  // Violence
+    [ 6,  5,  8,  8,  6,  9,  0,  4,  1,  3],  // Sexualized Violence
+    [21,  7, 22, 24, 27, 30,  4,  0, 12,  6],  // Girlhood Horror
+    [ 8,  1,  7, 12,  9, 16,  1, 12,  0,  3],  // Woman as Monster
+    [ 5,  3,  7,  6,  6,  4,  3,  6,  3,  0]   // Queer Themes
+  ];
+
+  // Clickable cells
+  var clickable = {
+    '3,5': '/theme-pairs/embodiment-violence/',
+    '5,3': '/theme-pairs/embodiment-violence/',
+    '4,5': '/theme-pairs/captivity-violence/',
+    '5,4': '/theme-pairs/captivity-violence/',
+    '0,5': '/theme-pairs/motherhood-violence/',
+    '5,0': '/theme-pairs/motherhood-violence/',
+    '0,3': '/theme-pairs/embodiment-motherhood/',
+    '3,0': '/theme-pairs/embodiment-motherhood/',
+    '4,7': '/theme-pairs/girlhood-captivity/',
+    '7,4': '/theme-pairs/girlhood-captivity/',
+    '2,3': '/theme-pairs/trauma-embodiment/',
+    '3,2': '/theme-pairs/trauma-embodiment/',
+    '2,5': '/theme-pairs/trauma-violence/',
+    '5,2': '/theme-pairs/trauma-violence/'
+  };
+
+  // Custom palette 
+
+  var rdpuStops = [
+    [0.000, [240, 225, 241]],
+    [0.150, [215, 178, 217]],
+    [0.300, [183, 130, 185]],
+    [0.500, [145,  83, 147]],
+    [0.650, [119,  56, 121]],
+    [0.800, [107,  42, 109]],
+    [1.000, [ 52,  12,  54]]
+  ];
+
+  function rdpuColor(value, maxVal) {
+    if (value <= 0) return '#0a0a0f';
+    var t = Math.min(value / maxVal, 1.0);
+    for (var i = 0; i < rdpuStops.length - 1; i++) {
+      var t0 = rdpuStops[i][0],   c0 = rdpuStops[i][1];
+      var t1 = rdpuStops[i+1][0], c1 = rdpuStops[i+1][1];
+      if (t >= t0 && t <= t1) {
+        var f = (t - t0) / (t1 - t0);
+        var r = Math.round(c0[0] + f * (c1[0] - c0[0]));
+        var g = Math.round(c0[1] + f * (c1[1] - c0[1]));
+        var b = Math.round(c0[2] + f * (c1[2] - c0[2]));
+        return 'rgb(' + r + ',' + g + ',' + b + ')';
+      }
+    }
+    return 'rgb(73,0,106)';
+  }
+
+  var MAX_VAL = 40;
+  var n = themes.length;
+  var grid = document.getElementById('hm-grid');
+
+  // Build grid rows 
+  for (var i = 0; i < n; i++) {
+    // Row label
+    var lbl = document.createElement('div');
+    lbl.className = 'hm-row-label';
+    lbl.textContent = themes[i];
+    grid.appendChild(lbl);
+
+    // Data cells
+    for (var j = 0; j < n; j++) {
+      var val = matrix[i][j];
+      var isDiag = (i === j);
+      var key = i + ',' + j;
+      var href = clickable[key];
+
+      var cell;
+      if (href && !isDiag) {
+        cell = document.createElement('a');
+        cell.href = href;
+        cell.className = 'hm-cell';
+      } else {
+        cell = document.createElement('div');
+        cell.className = 'hm-cell' + (isDiag ? ' diagonal' : '');
+      }
+
+      if (!isDiag) {
+        cell.style.backgroundColor = rdpuColor(val, MAX_VAL);
+        cell.textContent = val;
+        // Light text on dark cells, dark-pink text on pale cells
+        cell.style.color = val >= 16 ? '#f0ebe3' : 'rgba(90,20,55,0.9)';
+      }
+
+      grid.appendChild(cell);
+    }
+  }
+
+  // Build column label row 
+  // Spacer fills the row-label column
+  var spacer = document.createElement('div');
+  spacer.className = 'hm-col-label-spacer';
+  grid.appendChild(spacer);
+
+  for (var j = 0; j < n; j++) {
+    var labelCell = document.createElement('div');
+    labelCell.className = 'hm-col-label-cell';
+    var span = document.createElement('span');
+    span.className = 'hm-col-label-text';
+    span.textContent = themes[j];
+    labelCell.appendChild(span);
+    grid.appendChild(labelCell);
+  }
+
+  // Draw legend gradient 
+  var canvas = document.getElementById('hm-legend-canvas');
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    var h = canvas.height;
+    for (var y = 0; y < h; y++) {
+      
+      var val = MAX_VAL * (1 - y / h);
+      ctx.fillStyle = rdpuColor(val, MAX_VAL);
+      ctx.fillRect(0, y, 14, 1);
+    }
+  }
+
+  // Populate legend tick labels
+  var ticksEl = document.getElementById('hm-legend-ticks');
+  [40, 30, 20, 10, 0].forEach(function(t) {
+    var d = document.createElement('div');
+    d.textContent = t;
+    ticksEl.appendChild(d);
+  });
+
+})();
+</script>

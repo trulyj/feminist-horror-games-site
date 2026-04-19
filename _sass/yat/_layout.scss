@@ -137,14 +137,19 @@ html {
   .page-link {
     line-height: $base-line-height;
     color: $header-text-color;
-    transition: 0.1s ease-in-out;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    padding: 4px 10px;
+    border-radius: 4px;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: 24px;
-      &:hover {
-        text-decoration: underline;
-      }
+      margin-right: 12px;
+    }
+
+    &:hover {
+      background-color: rgba(107, 45, 110, 0.35);
+      color: #f0ebe3;
+      text-decoration: none;
     }
   }
 
@@ -627,10 +632,12 @@ html {
       margin: 0;
 
       > :nth-child(1) {
-        @include relative-font-size(3.9);
-        letter-spacing: -1px;
-        margin-bottom: 0.1em;
+        @include relative-font-size(3.4);
+        letter-spacing: 4px;
+        margin-bottom: 0.3em;
         font-weight: normal;
+        white-space: nowrap;
+        text-align: center;
         transition: 0.2s all;
 
         @include media-query($on-palm) {
@@ -639,8 +646,14 @@ html {
       }
 
       > :nth-child(2) {
-        font-weight: lighter;
-        margin-bottom: 0.8em;
+        font-family: 'Courier New', 'Courier', monospace;
+        font-weight: 400;
+        letter-spacing: 2px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 1.2em;
+        color: #ccc;
         transition: 0.2s all;
 
         @include media-query($on-palm) {
@@ -793,4 +806,142 @@ html {
   margin: 0 10px;
   background-color: #e3e3e3e3;
   vertical-align: baseline;
+}
+
+/**
+ * Devil Candle font for banner heading + banner layout tweaks
+ */
+.devil-candle-title {
+  font-family: devilCandle, cursive !important;
+  letter-spacing: 4px !important;
+}
+
+.page-banner-default {
+  text-align: center;
+}
+
+.banner-divider {
+  width: 50px;
+  height: 2px;
+  background-color: #871c3e;
+  margin: 0.6em auto 0;
+}
+
+.page-banner-inner {
+  text-align: center;
+}
+
+/**
+ * Home page two-column layout
+ */
+.home-content {
+  background-color: #080c0f;
+}
+
+.home-split {
+  border-top: 1px solid #2a2a2a;
+  background-color: #080c0f;
+}
+
+.home-split-inner {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+
+  @include media-query($on-laptop) {
+    flex-direction: column;
+  }
+}
+
+.home-abstract {
+  flex: 1;
+  padding: 48px 48px 48px 60px;
+  border-right: 1px solid #2a2a2a;
+  color: #bbb;
+  font-size: 15px;
+  line-height: 1.75;
+
+  p + p {
+    margin-top: 1.2em;
+  }
+
+  @include media-query($on-laptop) {
+    padding: 32px 24px;
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+  }
+}
+
+.home-chart {
+  flex: 1;
+  padding: 48px 48px 32px 40px;
+  display: flex;
+  flex-direction: column;
+
+  @include media-query($on-laptop) {
+    padding: 32px 24px;
+  }
+}
+
+.section-label {
+  font-size: 14px !important;
+  font-family: 'Sintony', sans-serif !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #871c3e !important;
+  margin-bottom: 20px !important;
+  font-weight: 700 !important;
+}
+
+.chart-container-home {
+  flex: 1;
+  min-height: 320px;
+  position: relative;
+}
+
+.chart-caption {
+  font-size: 11px !important;
+  color: #555 !important;
+  text-align: center !important;
+  margin-top: 12px !important;
+  letter-spacing: 1px !important;
+}
+
+.accent-rose {
+  color: #c0708a;
+  font-style: italic;
+}
+
+/* ── Heatmap two-column section ── */
+.home-heatmap-col {
+  flex: 1.5;
+  padding: 48px 40px 32px 60px;
+  border-right: 1px solid #2a2a2a;
+  min-width: 0;
+
+  // Strip inner wrapper padding — the column provides it
+  .hm-wrapper {
+    padding: 0;
+    background: transparent;
+  }
+
+  @include media-query($on-laptop) {
+    padding: 32px 24px;
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+  }
+}
+
+.home-heatmap-text {
+  flex: 1;
+  padding: 48px 48px 32px 40px;
+  color: #bbb;
+  font-size: 15px;
+  line-height: 1.75;
+
+  p + p { margin-top: 1.2em; }
+
+  @include media-query($on-laptop) {
+    padding: 32px 24px;
+  }
 }

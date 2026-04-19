@@ -2,14 +2,18 @@
  * Define fonts to be used throughout the site
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+
 @font-face {
-  font-family: bloodyFont; /* set name */
-  src: url('Barlow-Bold.ttf'); /* url of the font */
+  font-family: devilCandle;
+  src: url('DevilCandle_PERSONAL_USE_ONLY.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: regularFont; /* set name */
-  src: url('Barlow-Regular.ttf'); /* url of the font */
+  font-family: regularFont;
+  src: url('Sintony-Regular.ttf');
 }
 
 /**
@@ -20,11 +24,16 @@ p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0;
-  font-family: regularFont;
+  font-family: 'Sintony', regularFont, sans-serif;
 }
 
-h1 {
-  font-family: bloodyFont;
+.page-banner-heading {
+  font-family: 'Sintony', regularFont, sans-serif !important;
+}
+
+.page-banner-subheading {
+  font-size: 20px !important;
+  font-family: 'Sintony', regularFont, sans-serif !important;
 }
 
 
@@ -32,6 +41,18 @@ h1 {
 /**
  * Basic styling
  */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/assets/images/black-orchid.png');
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
 body {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
@@ -54,7 +75,7 @@ body {
 
 
 /**
- * Set `margin-bottom` to maintain vertical rhythm
+ * Set margin-bottom to maintain vertical rhythm
  */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
@@ -66,10 +87,10 @@ ul, ol, dl, figure,
 
 
 /**
- * `main` element
+ * main element
  */
 main {
-  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  display: block; 
 }
 
 
@@ -121,10 +142,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
- * Links
+ * Hyperlink color
  */
 a {
-  color: $brand-color;
+  color: #6b2d6e;
   text-decoration: none;
 
   &:hover {

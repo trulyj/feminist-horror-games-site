@@ -11,7 +11,7 @@
   <!-- Post list links -->
   <ul class="post-list" width: 100%>
     {%- for post in paginator.posts -%}
-    
+    {%- unless post.hide_from_home -%}
       <section class="page-banner">
         <div class="page-banner-img">
             <div style="background-color: #0e0e0e"></div>
@@ -22,6 +22,7 @@
           </div>
         </div>
       </section>
+    {%- endunless -%}
     {%- endfor -%}
   </ul>
 
