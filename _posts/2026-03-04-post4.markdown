@@ -11,18 +11,18 @@ hide_from_home: true
   <div class="hm-title">Theme Co-Occurrences Across Horror Video Games</div>
   <div class="hm-body">
 
-    <div class="hm-chart-area">
-      <!-- Single CSS grid: n data rows + 1 column-label row, all in the same grid for alignment -->
-      <div class="hm-grid" id="hm-grid"></div>
-    </div>
+  <div class="hm-chart-area">
+    <!-- Single CSS grid: n data rows + 1 column-label row, all in the same grid for alignment -->
+    <div class="hm-grid" id="hm-grid"></div>
+  </div>
 
-    <div class="hm-legend">
-      <div class="hm-legend-label">Number<br>of Games</div>
-      <div class="hm-legend-bar-wrap">
-        <canvas class="hm-legend-canvas" id="hm-legend-canvas" width="14" height="200"></canvas>
-        <div class="hm-legend-ticks" id="hm-legend-ticks"></div>
-      </div>
+  <div class="hm-legend">
+    <div class="hm-legend-label">Number<br>of Games</div>
+    <div class="hm-legend-bar-wrap">
+      <canvas class="hm-legend-canvas" id="hm-legend-canvas" width="14" height="200"></canvas>
+      <div class="hm-legend-ticks" id="hm-legend-ticks"></div>
     </div>
+  </div>
 
   </div>
 </div>
