@@ -29,10 +29,10 @@ permalink: /team/
   justify-content: center;
   flex-shrink: 0;
   color: #f0ebe3;
-  font-size: 22px;
-  font-weight: 700;
-  font-family: 'Sintony', sans-serif;
-  letter-spacing: 0.05em;
+  font-size: 28px;
+  font-weight: normal;
+  font-family: devilCandle, sans-serif;
+  letter-spacing: 0.08em;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -61,7 +61,7 @@ permalink: /team/
 <div class="team-grid">
 
   <div class="team-member">
-    <div class="team-portrait" style="background-image: url('/assets/images/naila.png');"></div>
+    <div class="team-portrait">NB</div>
 
     <div class="team-bio">
       <p>Naila Butt is a Digital Media Specialist and tutor at CUNY City Tech Writing Center. She holds a BS in Professional and Technical Writing and is currently pursuing an M.A. in Digital Humanities at the CUNY Graduate Center, where she explores her research interests in play theory, game studies, and pedagogy.</p>
@@ -79,7 +79,7 @@ permalink: /team/
   </div>
 
   <div class="team-member">
-    <div class="team-portrait" style="background-image: url('/assets/images/truly.jpg');"></div>
+    <div class="team-portrait">TJ</div>
 
     <div class="team-bio">
       <p>Truly Johnson got an undergrad degree in computer science at Hunter College and currently works as a software engineer. They're still figuring out their exact research interests, but are generally curious about the particular mainstream technology and media culture of the present moment — and how people chafe against dominant views through non-standard expressions of identity and queerness.</p>
