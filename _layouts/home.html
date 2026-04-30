@@ -5,6 +5,8 @@ layout: default
 <!-- Custom home layout: banner + two-column abstract/chart section + heatmap section + remaining posts -->
 
 <link rel="stylesheet" href="/assets/css/heatmap-styles.css">
+<link rel="stylesheet" href="/assets/css/network-styles.css">
+<link rel="stylesheet" href="/assets/css/puzzle-styles.css">
 
 <div class="home-content">
 
@@ -22,14 +24,14 @@ layout: default
           and female monstrosity. While horror has been examined in film and literature studies, horror video
           games are underexplored as cultural artifacts. This project builds on an earlier phase of work on a
           constructed dataset horror_games_feminist_themes where keywords were web-scraped from Wikipedia's
-          <a href="https://en.wikipedia.org/wiki/Category:Horror_video_games" target="_blank">Category: Horror video games</a> tree to identify possible recurring feminist themes. This project now
-          aims to refine and transform the dataset into a public-facing website that visualizes and interprets
-          patterns that emerge from the dataset, making them visible and analyzable.
-        </p>
+          <a href="https://en.wikipedia.org/wiki/Category:Horror_video_games" target="_blank">Category: Horror video games</a> tree to identify possible recurring feminist themes.
+          The project now aims to refine and examine the dataset to visualze the co-occuring patterns of feminist themes across the horror video game genre. Through data visualization and close readings, we seek to uncover and interpret the complex relationships between these themes, ultimately contributing to broader discussions. 
         <p>
-          We findings reveal unexpected patterns in the dataset, such co-occurring patterns. We asked ourselves the questions:
-          What theoretical frameworks can we use to interpret these patterns?
-          What do they reveal about the state of the horror video game genre?
+         Our findings reveal co-occurences across themes, raising questions about how feminist frameworks can help 
+         us reads the genre's patterns of representation. What do these cluster's reveal about how horror encodes
+         and sometimes subverts gender and powder dynamics?  
+
+         We invite you to explore the heatmap below to begin understanding some of these key questions
         </p>
       </div>
 
@@ -68,11 +70,79 @@ layout: default
       </div>
 
       <div class="home-heatmap-text">
-        
+        <p class="section-label">Explore the Heat Map</p>
+        <p>This heatmap visualizes the co-occurrence frequency of each feminist theme pairing, with each cell showing the exact number of games in which both themes appear together. Darker cells indicate stronger co-occurrence; lighter cells indicate weaker overlap.</p>
+        <p>The chart offers a clearer picture of which theme pairings are most common across the dataset — and how that differs from how frequently any single theme appears on its own. Notably, Violence and Embodiment emerge as one of the strongest pairings, with a co-occurrence of 40 games. This suggests that the female body under physical threat is a dominant narrative within the genre.</p>
+        <p>Cells outlined in orange mark pairings selected for closer analysis. Click any highlighted cell to explore a deeper reading of that co-occurrence.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Text left, Network chart right -->
+  <section class="home-split">
+    <div class="home-split-inner">
+
+      <div class="home-network-text">
+        <p class="section-label">Theme Co-occurrence Network</p>
         <p>
-          not sure what will go here yet or if i should center the heatmap instead
-          maybe a brief description of the heatmap and how to read it
-          or it would be pretty cool to add snapshot video compilations of each game co-occurence pair on hover 
+        As you may have noticed in the heatmap, themes rarely occur in isolation. 
+        The close reads of the data reveal that themes frequently co-occur beyond the specific pairings selected for analysis as seen in
+        the heat map above. Digging further into the dataset reveals additional layers worth examining.
+       
+        <p>The following visualization maps the interconnections between feminist themes based on how frequently they 
+       co-occur within individual games. Each node represents a distinct theme; edges connect nodes according to the strength 
+        of their co-occurrences, with thicker lines indicating stronger relationships. The layout is force-directed, meaning themes 
+        that frequently appear together gravitate toward one another, while less associated themes settle toward the periphery.
+        Nodes are draggable. Clicking a node opens a sidebar listing every game in the dataset that contains the connected theme.</p>
+      
+      </div>
+
+      <div class="home-network-col">
+        <p class="section-label">Explore the Network</p>
+        <div class="network-wrap" id="network-wrap">
+          <svg id="network-svg"></svg>
+        </div>
+        <p class="chart-caption">Click a node to see which games share that theme · drag · scroll to zoom</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Data Puzzle (full-width) -->
+  <section class="home-split">
+    <div class="home-split-inner" style="flex-direction: column;">
+
+      <div style="padding: 48px 60px 20px;">
+        <p class="section-label">Explore the Dataset</p>
+        <p style="color: #bbb; font-size: 15px; line-height: 1.75; max-width: 680px;">
+          Drag pieces from the tray onto the two board slots to filter and cross-reference the dataset.
+          Combine a genre, theme, or archetype in each slot to see which games sit at that intersection,
+          along with a breakdown of co-occurring attributes.
+        </p>
+      </div>
+
+      <div class="puzzle-embed">
+        <div class="workspace">
+          <div class="tray" id="pz-tray"></div>
+
+          <div class="board">
+            <div class="slot" id="pz-slot-0" data-slot="0"></div>
+            <div class="slot" id="pz-slot-1" data-slot="1"></div>
+          </div>
+
+          <div class="results">
+            <div class="results-header">
+              <h3>Matching Games</h3>
+              <span class="results-count" id="pz-results-count">—</span>
+            </div>
+            <div class="results-list" id="pz-results-list">
+              <div class="result-empty">Drop pieces onto the board<br>to filter and explore the data</div>
+            </div>
+          </div>
+
+          <div class="insight-bar" id="pz-insight-bar"></div>
+        </div>
       </div>
 
     </div>
@@ -81,6 +151,19 @@ layout: default
   <!-- Remaining posts / visualizations -->
   {%- include views/pagination.html -%}
 
+</div>
+
+<!-- Network panel overlay -->
+<div id="net-panel">
+  <div id="net-panel-handle"></div>
+  <button id="net-panel-close">×</button>
+  <div id="net-panel-header">
+    <div id="net-panel-theme-label">Theme</div>
+    <div id="net-panel-title"><span id="net-panel-dot"></span><span id="net-panel-name"></span></div>
+    <div id="net-panel-count"></div>
+  </div>
+  <div id="net-panel-divider"></div>
+  <ul id="net-panel-list"></ul>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
@@ -292,3 +375,7 @@ new Chart(document.getElementById("homeChart"), {
 
 })();
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="/assets/js/network.js"></script>
+<script src="/assets/js/puzzle.js"></script>
