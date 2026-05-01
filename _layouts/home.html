@@ -4,11 +4,9 @@ layout: default
 
 <!-- Custom home layout: banner + two-column abstract/chart section + heatmap section + remaining posts -->
 
-<head>
-  <link rel="stylesheet" href="/assets/css/heatmap-styles.css">
-  <link rel="stylesheet" href="/assets/css/network-styles.css">
-  <link rel="stylesheet" href="/assets/css/puzzle-styles.css">
-</head>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/heatmap-styles.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/network-styles.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/puzzle-styles.css">
 
 <div class="home-content">
 
@@ -379,5 +377,5 @@ new Chart(document.getElementById("homeChart"), {
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<script src="/assets/js/network.js"></script>
-<script src="/assets/js/puzzle.js"></script>
+<script src="{{ site.baseurl }}/assets/js/network.js"></script>
+<script src="{{ site.baseurl }}/assets/js/puzzle.js"></script>
