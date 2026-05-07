@@ -28,6 +28,13 @@ pages:
    - index.markdown
    - about.markdown
    - team.markdown
+   - theme-pairs/captivity-violence.markdown
+   - theme-pairs/embodiment-motherhood.markdown
+   - theme-pairs/embodiment-violence.markdown
+   - theme-pairs/girlhood-captivity.markdown
+   - theme-pairs/motherhood-violence.markdown
+   - theme-pairs/trauma-embodiment.markdown
+   - theme-pairs/trauma-violence.markdown
 header_pages:
    - about.markdown
    - team.markdown
