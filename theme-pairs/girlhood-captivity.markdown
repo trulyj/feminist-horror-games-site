@@ -77,7 +77,7 @@ The game fundamentally embodies the themes of girlhood and captivity through the
 
 <figure>
   <img src='{{ site.baseurl }}/assets/images/DDLC_Distortion.PNG' alt="An open notebook. On the left page, there's a small sticker of Monika, one of the literature club girls. On the right page, there are a number of distorted permutations of Monika's name. There is some blocky glitching over the image and the right third of it is covered with a red and black static pattern.">
-  <figcaption>The Orphan of Kos emerging from its mother's corpse.</figcaption>
+  <figcaption>Unease breaks through the visual novel's form.</figcaption>
 </figure>
 
 Through these endless horrific loops, this is the game’s biggest feminist gesture within the horror genre. The system is designed so the player’s gaze is always present, not only as a neutral observer, but as an active participant. The protagonist’s face is never showing, yet you play a pivotal role in the suffering of these girls. His captivity of the girls in this club is also yours. The game makes you sit and asks: what will you do with that?
