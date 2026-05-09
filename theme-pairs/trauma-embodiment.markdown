@@ -64,4 +64,21 @@ games:
     url: "en.wikipedia.org/wiki/What_Remains_of_Edith_Finch"
 ---
 
-[Body text goes here.]
+<h1>Trauma, Mental Illness, and Embodiment in Hellblade: Senua’s Sacrifice</h1>
+
+When we think about horror games, the first thing that comes to mind is jumpscares, dark ambiance or creepy themes. Hellblade: Senua’s Sacrifice attempts to do something different, by letting the player embody the sense of psychological horror. Going through the game as Senua, is more than just playing a character, it is inhabiting the world of mental illness and the experiences that are produced as a result. In the game itself, Senua’s psychosis is not just a narrative telling, it is the game itself and the player doesn’t know a reality without it. 
+
+The most notable feature of Hellblade is its use of audio to narrate the voices that Senua hears in her head. It is a constant mix of multiple voices, overlapping with one another, commenting on the player's actions and even expressing their own emotions and fears. The voices aren’t presented as medical or psychological symptoms of her illness, but rather the reality she lives in. They are simply the world Senua has known her whole life. You cannot turn them off through in-game settings, you cannot adjust their volume or take any external recourse if you dislike them. It is a feature designed for the player to embody who and what Senua is throughout the game. Most games, when depicting female mental illness, render it visually. We see the hysterical woman, the breakdown, and the institutionalization of women as external distant observers. These are narratives that happen to the female body, but are typically watched by others. Hellblade’s approach internalizes this theme. You, the player, are listening to the voices, essentially inside Senua’s skull experiencing everything she experiences. This makes the experience of psychosis the medium where we sense the embodiment of Senua. 
+
+<figure>
+  <img src='{{ site.baseurl }}/assets/images/Hellblade.PNG' alt='An image of rocks, slightly blurry as if the viewer is in motion. In the center is a face that also looks to be made of rock except for its blue-grey eyes peering out of the stone. A caption reads "Don&#39;t be afraid when they speak to you. I will always be here to guide you."'>
+  <figcaption>Senua must contend with psychosis, expressed by overlapping voices that she and the player hear.</figcaption>
+</figure>
+
+Throughout the game, we see the shame and guilt driven by Senua as a feminist gesture to what she is living through. The central quest of the game is the journey to save the soul of Senua’s love, Dillion. On the surface, it seems this quest is driven by grief and pain, but we learn that it is instead pursued due to a sense of extreme guilt. Senua believes that her “darkness”, the voices she hears inside of her head, is the reason that her lover died. Her belief is that the psychosis is an evil contaminating entity that destroys those she loves. This isn’t just a symptom of her mental illness, but it has been given authority in her life. It is perceived as something dangerous and corrupt that must be kept locked away out of fear of harm to others. 
+
+This idea of having to keep female struggles hidden has been a long historical sentiment among women. A typical narrative is that externalizing one’s struggles will be viewed as a burden by others, and in doing so, something is “wrong” with you. Senua’s experience amplifies these negative ideologies through her actions of attempting to internalize her emotions and push them down. Her journey isn’t a physical journey, but deeply rooted in her culture and the way the world accepted circumstances of mental illness. 
+
+Hellblade: Senua’s Sacrifice highlights mental illness in a way most other horror games do not. It doesn’t display mental illness as a spectacle, but rather a subject. The underlying trauma, guilt and the embodiment of who Senua is gives us a unique experience that invites us into the world of feminine psychosis during this time period. She isn’t simply a character to be looked at and played as, but rather someone to be inhabited. The darkness that spreads within her, the voices that contract one another, all define the cold and hostile world that refuses to accept her. It is a game that begs you to survive, yet you as the player are unsure what this survival ultimately is in the end.
+
+
