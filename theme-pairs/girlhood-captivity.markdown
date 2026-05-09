@@ -62,6 +62,8 @@ games:
     url: "https://en.wikipedia.org/wiki/Wilson%27s_Heart_%28video_game%29"
 ---
 
+<h1>Girlhood and Captivity in Doki Doki Literature Club</h1>
+
 When first starting the game at a quick glance, Doki Doki Literature Club presents itself as a wholesome interactive visual novel game. It sets itself similarly to other dating simulator genre of games. The narrative follows four girls in a school club, with bubbly pastel aesthetics and cheerful music. It invites the player/main character to form young romantic connections with each of these individual girls based on the choices made. On the surface level, it portrays itself as an innocent girlhood experience. However, through this, the game traps you in the false sense of security, luring deeper into a sense of adolescence and captivity.
 
 The entire game in itself is defined by its enclosure. The Literature Club in the game is the one primary space of the narrative, with little to no external variables. There are no teachers, parents, adults or any sense of the existence of others from the outside world. Each of the characters exist primarily within the club space and their personalities revolve heavily around it. Each of the girls attempt to form a relationship with the protagonist, whether it be romantically driven or only for companionship. The girls themselves aren’t physically imprisoned in any literal sense, rather they are ontologically trapped by the game's existence. As the game continues, the players realize that the construct of “romantic” pressure becomes impossible to ignore and avoid.

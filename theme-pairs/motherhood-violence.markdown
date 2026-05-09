@@ -74,4 +74,4 @@ games:
     url: "https://en.wikipedia.org/wiki/Wilson%27s_Heart_%28video_game%29"
 ---
 
-[Body text goes here.]
+While we haven't done a close reading specifically examining the interplay between Motherhood and Violence, both the close readings of <a href='{{ site.baseurl }}/theme-pairs/embodiment-violence/'>Outlast 2, focusing on embodiment and violence</a> and of <a href='{{ site.baseurl }}/theme-pairs/embodiment-motherhood/'>Bloodborne, focusing on motherhood and embodiment</a> touch on this. So take a look at those if you're interested. Though this project focuses mostly on theme pairs, we've noticed that these three themes - motherhood, embodiment, and violence - tend to also inform each each other significantly as a trio.
